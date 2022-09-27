@@ -4,12 +4,15 @@
  *  @author Lucas Esteves <lucas.esteves-rocha@insa-rennes.fr>
  */
 
-#include <generated/csr.h>
-
 #ifndef AMP_UTILS_H
 #define AMP_UTILS_H
 
+#include <generated/csr.h>
+#include <stddef.h>
+#include <string.h>
+
 void amp_millis_init(void);
 uint32_t amp_millis(void);
+int force_ccr_data(uint8_t *data_out, uint8_t *data_in, size_t len, int ccr_n);
 
 #endif
