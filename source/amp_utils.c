@@ -26,37 +26,29 @@ uint32_t amp_millis(void)
 
 
 /**
- * @brief 
+ * @brief Function to perform multiple reads or writes in a given memory address
  * 
- * @param data_out 
- * @param data_in 
- * @param len 
- * @param ccr_n 
- * @return int 
+ * @param data_out  The pointer where the data are going to be stored 
+ * @param data_in   The pointr to the data that will be read
+ * @param len       Size to be read/written
+ * @param ccr_n     How many times to perform the read/write
+ * @return int      Returns < 0 if an error ocurred, 0 if success
  */
-int force_ccr_data(uint8_t *data_out, uint8_t *data_in, size_t len, int ccr_n)
+int force_ccr_data(uint8_t *data_in, size_t len, int ccr_n)
 {
     // Checking input parameters
-    if (data_out == NULL) {
+
+    if (data_in == NULL && len > 0) {
         return -1;
     }
-    if (data_in == NULL && len > 0) {
-        return -2;
-    }
-    for (int i = 0; i < ccr_n; i++) {
-        int counter = 0;
-        do {
-            int size_to_receive;
-            int bits_left = len - counter;
+    
+    uint8_t temp;
 
-            if (bits_left > 128) {
-                size_to_receive = 128;
-            } else {
-                size_to_receive = bits_left;
-            }
-            memcpy((void *) &data_out[counter], (void *) &data_in, size_to_receive);
-            counter += size_to_receive;
-        } while (counter < len);
+    for (int i = 0; i < ccr_n; i++) {
+        for(int j = 0; j < len; j++){
+            temp = data_in[j];
+        } 
     }
+    
     return 0;
 }

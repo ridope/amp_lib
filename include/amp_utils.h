@@ -13,6 +13,6 @@
 
 void amp_millis_init(void);
 uint32_t amp_millis(void);
-int force_ccr_data(uint8_t *data_out, uint8_t *data_in, size_t len, int ccr_n);
+int force_ccr_data(uint8_t *data_in, size_t len, int ccr_n);
 
 #endif
