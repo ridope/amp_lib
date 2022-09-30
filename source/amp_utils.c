@@ -41,7 +41,7 @@ int force_ccr_read_data(uint8_t *data_in, size_t len, int ccr_n)
         return -1;
     }
     
-    uint8_t temp;
+    volatile uint8_t temp;
 
     for (int i = 0; i < ccr_n; i++) {
         for(int j = 0; j < len; j++){
