@@ -12,11 +12,7 @@
 #include <stdint.h>
 #include <string.h>
 
-<<<<<<< HEAD
 #define CCR_N            1
-=======
-#define CCR_N            691
->>>>>>> d8f21895eaeb7006dc5b795cd16878f8899bc3f0
 
 #define KEY_SIZE_BITS    128
 #define KEY_SIZE_BYTES   16
