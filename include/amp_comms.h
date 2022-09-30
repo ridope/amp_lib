@@ -12,7 +12,7 @@
 #include <stdint.h>
 #include <string.h>
 
-#define CCR_N            333
+#define CCR_N            1
 
 #define KEY_SIZE_BITS    128
 #define KEY_SIZE_BYTES   16
@@ -21,7 +21,10 @@
 
 #define CLASS_SIZE        1
 
-#define AMP_COMMS_DATA_SIZE 128
+#define AMP_COMMS_DATA_SIZE 64
+
+#define IMG_WIDTH           28
+#define IMG_HEIGTH          28
 
 typedef enum AMP_CMDS
 {
@@ -55,6 +58,12 @@ typedef struct PRIVATE_AES_DATA
     uint8_t key[KEY_SIZE_BYTES];
     uint8_t ciphertext[CLASS_SIZE+MAC_LEN];
 } private_aes_data_t;
+
+typedef volatile struct SOURCE_DATA
+{
+    float f_img[IMG_WIDTH*IMG_HEIGTH];
+    uint8_t flag_received;
+} source_data_t;
 
 int amp_comms_init(amp_comms_tx_t *tx_ctrl, amp_comms_rx_t *rx_ctrl);
 int amp_comms_send(amp_comms_tx_t *tx_ctrl, amp_cmds_t cmd, uint8_t *data, size_t len);
