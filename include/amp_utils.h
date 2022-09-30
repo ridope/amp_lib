@@ -10,9 +10,11 @@
 #include <generated/csr.h>
 #include <stddef.h>
 #include <string.h>
+#include <stdlib.h>
 
 void amp_millis_init(void);
 uint32_t amp_millis(void);
-int force_ccr_data(uint8_t *data_in, size_t len, int ccr_n);
+int force_ccr_read_data(uint8_t *data_in, size_t len, int ccr_n);
+int force_ccr_write_data(uint8_t *data_in, size_t len, int ccr_n);
 
 #endif

@@ -21,7 +21,7 @@
 
 #define CLASS_SIZE        1
 
-#define AMP_COMMS_DATA_SIZE 64
+#define AMP_COMMS_DATA_SIZE 128
 
 #define IMG_WIDTH           28
 #define IMG_HEIGTH          28
